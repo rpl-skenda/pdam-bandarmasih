@@ -1,0 +1,26 @@
+{% extends 'app/main.html' %} {%load static%} {% block content %}
+
+<!--Login Box Start-->
+<div id="login-box" class="wrapper fadeInDown zero-raduis h-100 d-flex justify-content-center">
+  <div id="form-content">
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="{%static  './pict/logo-pdam3.png'%}" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Title -->
+    <div class="title">
+      <h4>PDAM <span class="bandarmasih-text">Bandarmasih</span></h4>
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="text" class="zero-raduis" name="text" placeholder="USER" />
+      <input type="password" id="password" class="zero-raduis" name="login" placeholder="PASSWORD" />
+      <input formaction="/home" type="submit" class="fadeIn fourth zero-raduis" value="login" />
+    </form>
+  </div>
+</div>
+<!-- Login Box End -->
+
+{% endblock %}

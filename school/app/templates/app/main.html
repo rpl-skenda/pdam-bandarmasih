@@ -1,0 +1,44 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static '/css/custom-style-home.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/custom-style-login.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/custom-style-data.css' %}" />
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css" />
+
+    <link rel="icon" href="{% static './pict/logo-pdam3.png'%}" />
+    <title>PDAM Bandarmasih</title>
+  </head>
+  <body>
+    <!-- Navbar Start -->
+
+    
+    {%block content%} {%endblock%}
+    <!-- Navbar End -->
+
+    <!-- Java Script -->
+    <script src={% static '/js/jquery.js'%}></script>
+    <script src={% static '/js/popper.js'%}></script>
+    <script src={% static '/js/bootstrap-min.js'%}></script>
+    <script src={% static '/js/datatable.js'%}></script>
+    <script src={% static '/js/script.js'%}></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#data-table").DataTable();
+      });
+    </script>
+  </body>
+</html>

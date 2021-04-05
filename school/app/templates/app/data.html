@@ -1,0 +1,260 @@
+{% extends 'app/main.html' %} {%load static%} {% block content %} {%include 'app/navbar.html' %}
+
+<!-- Navbar End -->
+<div class="container">
+  <!-- Form Start -->
+  <section id="input-form">
+    <div class="row justify-content-center">
+      <form class="col-sm-5">
+        <div class="form-group">
+          <label for="">No SPK</label>
+          <input type="number" class="form-control" id="" placeholder="No SPK" />
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Zona</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>Banjar Barat</option>
+            <option>Banjar Utara</option>
+            <option>Banjar Timur</option>
+            <option>Banjar Selatan</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="">Nama</label>
+          <input type="string" class="form-control" id="" placeholder="Nama" />
+        </div>
+        <div class="form-group">
+          <label for="">Alamat</label>
+          <input type="string" class="form-control" id="" placeholder="Alamat" />
+        </div>
+      </form>
+
+      <form class="col-sm-5">
+        <div class="form-group">
+          <label for="">Tanggal</label>
+          <input type="date" class="form-control" id="" placeholder="" />
+        </div>
+        <div class="form-group">
+          <label for="">Jenis Gangguan</label>
+          <input type="string" class="form-control" id="" placeholder="Jenis Gangguan" />
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Jenis Pipa</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>Persil</option>
+            <option>Trandist</option>
+          </select>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-block mt-5">Selesai</button>
+      </form>
+    </div>
+  </section>
+  <!-- Form End -->
+</div>
+
+<!-- Table Data Start-->
+
+<div class="container container-color">
+  <table class="table table-fluid" id="data-table">
+    <thead class="thead-light">
+      <tr>
+        <th></th>
+        <th scope="col" class="th-sm">SPK</th>
+        <th scope="col" class="th-sm">Zona</th>
+        <th scope="col" class="th-sm">Nama</th>
+        <th scope="col" class="th-sm">Alamat</th>
+        <th scope="col" class="th-sm">Tanggal</th>
+        <th scope="col" class="th-sm">Gangguan</th>
+        <th scope="col" class="th-sm">Pipa</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="customtable">
+      <tr>
+        <th>
+          <label class="customcheckbox"> <input type="checkbox" class="custom-checkbox" /> <span class="checkmark"></span> </label>
+        </th>
+        <td>123</td>
+        <td>Banjar Barat</td>
+        <td>Bambang</td>
+        <td>Void</td>
+        <td>2021-05-30</td>
+        <td>Bocor</td>
+        <td>Persil</td>
+        <th>
+          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
+        </th>
+      </tr>
+      <tr>
+        <th class="no-sorting">
+          <label class="customcheckbox"> <input type="checkbox" class="custom-checkbox" /> <span class="checkmark"></span> </label>
+        </th>
+        <td>223</td>
+        <td>Banjar Selatan</td>
+        <td>Dodi</td>
+        <td>Void</td>
+        <td>2021-05-30</td>
+        <td>Bocor</td>
+        <td>Persil</td>
+        <th>
+          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <label class="customcheckbox"> <input type="checkbox" class="custom-checkbox" /> <span class="checkmark"></span> </label>
+        </th>
+        <td>323</td>
+        <td>Banjar Utara</td>
+        <td>User</td>
+        <td>Void</td>
+        <td>2021-05-30</td>
+        <td>Bocor</td>
+        <td>Persil</td>
+        <th>
+          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <label class="customcheckbox"> <input type="checkbox" class="custom-checkbox" /> <span class="checkmark"></span> </label>
+        </th>
+        <td>423</td>
+        <td>Banjar Utara</td>
+        <td>User</td>
+        <td>Void</td>
+        <td>2021-05-30</td>
+        <td>Bocor</td>
+        <td>Persil</td>
+        <th>
+          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <label class="customcheckbox"> <input type="checkbox" class="custom-checkbox" /> <span class="checkmark"></span> </label>
+        </th>
+        <td>523</td>
+        <td>Banjar Utara</td>
+        <td>User</td>
+        <td>Void</td>
+        <td>2021-05-30</td>
+        <td>Bocor</td>
+        <td>Persil</td>
+        <th>
+          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <label class="customcheckbox"> <input type="checkbox" class="custom-checkbox" /> <span class="checkmark"></span> </label>
+        </th>
+        <td>623</td>
+        <td>Banjar Utara</td>
+        <td>User</td>
+        <td>Void</td>
+        <td>2021-05-30</td>
+        <td>Bocor</td>
+        <td>Persil</td>
+        <th>
+          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <label class="customcheckbox"> <input type="checkbox" class="custom-checkbox" /> <span class="checkmark"></span> </label>
+        </th>
+        <td>723</td>
+        <td>Banjar Timur</td>
+        <td>User</td>
+        <td>Void</td>
+        <td>2021-05-30</td>
+        <td>Bocor</td>
+        <td>Persil</td>
+        <th>
+          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <label class="customcheckbox"> <input type="checkbox" class="custom-checkbox" /> <span class="checkmark"></span> </label>
+        </th>
+        <td>823</td>
+        <td>Banjar Utara</td>
+        <td>User</td>
+        <td>Void</td>
+        <td>2021-05-30</td>
+        <td>Bocor</td>
+        <td>Persil</td>
+        <th>
+          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <label class="customcheckbox"> <input type="checkbox" class="custom-checkbox" /> <span class="checkmark"></span> </label>
+        </th>
+        <td>923</td>
+        <td>Banjar Barat</td>
+        <td>User</td>
+        <td>Void</td>
+        <td>2021-05-30</td>
+        <td>Bocor</td>
+        <td>Persil</td>
+        <th>
+          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <label class="customcheckbox"> <input type="checkbox" class="custom-checkbox" /> <span class="checkmark"></span> </label>
+        </th>
+        <td>103</td>
+        <td>Banjar Utara</td>
+        <td>User</td>
+        <td>Void</td>
+        <td>2021-05-30</td>
+        <td>Bocor</td>
+        <td>Persil</td>
+        <th>
+          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <label class="customcheckbox"> <input type="checkbox" class="custom-checkbox" /> <span class="checkmark"></span> </label>
+        </th>
+        <td>113</td>
+        <td>Banjar Selatan</td>
+        <td>User</td>
+        <td>Void</td>
+        <td>2021-05-30</td>
+        <td>Bocor</td>
+        <td>Persil</td>
+        <th>
+          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <label class="customcheckbox"> <input type="checkbox" class="custom-checkbox" /> <span class="checkmark"></span> </label>
+        </th>
+        <td>123</td>
+        <td>Banjar Timur</td>
+        <td>User</td>
+        <td>Void</td>
+        <td>2021-05-30</td>
+        <td>Bocor</td>
+        <td>Persil</td>
+        <th>
+          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Table Data End -->
+
+{% endblock %}

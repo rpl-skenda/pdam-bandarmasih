@@ -1,0 +1,79 @@
+{% extends 'app/main.html' %} {%load static%} {% block content %} {%include 'app/navbar.html' %}
+
+<div class="container">
+  <!-- User Box Start-->
+
+  <section id="user-box">
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title mb-4">
+              <div class="d-flex justify-content-start">
+                <div class="image-container">
+                  <img src="{%static '/images/user-logo.png'%}" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                </div>
+                <div class="ml-5 mt-3 profile-head">
+                  <h4>Nama pendek</h4>
+                  <h6>Jabatan</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <ul class="nav nav-tabs mb-4">
+                  <li class="nav-item">
+                    <a class="nav-link active">Informasi</a>
+                  </li>
+                </ul>
+                <div class="row">
+                  <div class="col-sm-3 col-md-2 col-5">
+                    <label style="font-weight: bold">Nama</label>
+                  </div>
+                  <div class="col-md-8 col-6">Nama Panjang, +title</div>
+                </div>
+                <hr />
+
+                <div class="row">
+                  <div class="col-sm-3 col-md-2 col-5">
+                    <label style="font-weight: bold">NIK</label>
+                  </div>
+                  <div class="col-md-8 col-6">01010101</div>
+                </div>
+                <hr />
+
+                <div class="row">
+                  <div class="col-sm-3 col-md-2 col-5">
+                    <label style="font-weight: bold">Jabatan</label>
+                  </div>
+                  <div class="col-md-8 col-6">Jabtan</div>
+                </div>
+                <hr />
+
+                <div class="row">
+                  <div class="col-sm-3 col-md-2 col-5">
+                    <label style="font-weight: bold">Alamat</label>
+                  </div>
+                  <div class="col-md-8 col-6">Jln......................</div>
+                </div>
+                <hr />
+
+                <div class="row">
+                  <div class="col-sm-3 col-md-2 col-5">
+                    <label style="font-weight: bold">Telpon</label>
+                  </div>
+                  <div class="col-md-8 col-6">01010101</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- User Box End -->
+</div>
+
+{% endblock %}
