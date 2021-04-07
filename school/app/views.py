@@ -10,3 +10,6 @@ def home(request):
 
 def data(request):
    return render(request, 'app/data.html')
+
+def status(request):
+   return render(request, 'app/status.html')
