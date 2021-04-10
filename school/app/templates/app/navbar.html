@@ -10,16 +10,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-lg-auto">
           <li class="nav-item">
-            <a class="nav-link text-primary" href="/home">Home</a>
+            <a class="nav-link text-primary" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-primary" href="/data">Laporan Kebocoran Pipa</a>
+            <a class="nav-link text-primary" href="{% url 'data' %}">Laporan Kebocoran Pipa</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-primary" href="/status">Status</a>
+            <a class="nav-link text-primary" href="{% url 'status' %}">Status</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-danger" href="/">Logout</a>
+            <a class="nav-link text-danger" href="{% url 'login' %}">Logout</a>
           </li>
         </ul>
       </div>
