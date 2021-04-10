@@ -2,16 +2,6 @@
   color: #bdd2e9;
 }
 
-#total-order,
-#orders-delivered,
-#orders-pending,
-#barat,
-#utara,
-#timur,
-#selatan {
-  background-color: #fff !important;
-}
-
 #table-fixed {
   margin-bottom: 0px;
 }
