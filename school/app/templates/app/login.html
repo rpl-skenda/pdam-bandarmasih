@@ -1,23 +1,26 @@
-{% extends 'app/main.html' %} {%load static%} {% block content %}
+{% extends 'accounts/main.html' %} {%load static%} {% block content %}
 
 <!--Login Box Start-->
 <div id="login-box" class="wrapper fadeInDown zero-raduis h-100 d-flex justify-content-center">
   <div id="form-content" class="shadow">
     <!-- Icon -->
-    <div class="fadeIn first">
+    <div class="fadeIn first mt-4">
       <img src="{%static  './images/logo-pdam3.png'%}" id="icon" alt="User Icon" />
     </div>
 
     <!-- Title -->
-    <div class="title">
+    <div class="title mb-4">
       <h4>PDAM <span class="bandarmasih-text">Bandarmasih</span></h4>
     </div>
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="text" class="zero-raduis" name="text" placeholder="USER" />
-      <input type="password" id="password" class="zero-raduis" name="login" placeholder="PASSWORD" />
-      <input formaction="/home" type="submit" class="fadeIn fourth zero-raduis" value="login" />
+    <form class="form-signin mr-5 ml-5 mb-5">
+      <label for="text" class="sr-only">text address</label>
+      <input type="text" id="text" class="form-control" placeholder="Username" required="" autofocus="" />
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" />
+      <br />
+      <input type="submit" name="" id="" value="SUBMIT" class="btn btn-block btn-primary" />
     </form>
   </div>
 </div>

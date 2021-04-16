@@ -1,0 +1,14 @@
+{% extends 'accounts/main.html' %} {%load static%} {% block content %} {%include 'accounts/navbar.html' %}
+<div class="container">
+  <!-- Form Start -->
+  <section id="input-form">
+    <div class="row justify-content-center">
+      <form class="col-sm-9" method="POST" action="">
+        {% csrf_token %} {{form.as_p}}
+        <input type="submit" value="TAMBAHKAN LAPORAN" class="mt-5 mb-3 btn btn-primary btn-block" />
+      </form>
+    </div>
+  </section>
+  <!-- Form End -->
+</div>
+{%endblock%}

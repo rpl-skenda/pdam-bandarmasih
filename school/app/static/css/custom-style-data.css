@@ -64,83 +64,14 @@ body {
 /* Form Input */
 #input-form {
   padding: 3%;
-  margin-bottom: 5%;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   background: #fff;
   box-shadow: 0 2px 2px 0 #4e7cad5b;
 }
 
-/* text box */
-input[type="button"],
-input[type="submit"] {
-  background-color: #3988e1;
-  border: none;
-  color: white;
-  width: 85%;
-  padding: 10px 25px;
-  margin-top: 15px !important;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 16px;
-  cursor: pointer;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
-  margin: 5px 20px 40px 20px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-input[type="button"]:hover,
-input[type="submit"]:hover {
-  background-color: #58a6ff;
-}
-
-input[type="button"]:active,
-input[type="submit"]:active {
-  -moz-transform: scale(0.95);
-  -webkit-transform: scale(0.95);
-  -o-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
-}
-
-input[type="text"],
-input[type="password"] {
-  background-color: #f5f5f5;
-  border: none;
-  color: #0d0d0d;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px;
-  width: 85%;
-  border: 2px solid #f5f5f5;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-  background-color: #fff;
-  border-bottom: 2px solid #3988e1;
-}
-
-input[type="text"]:focus::placeholder,
-input[type="password"]:focus::placeholder {
-  color: transparent;
+a #cancel-button {
+  background-color: red;
 }
 
 /* Table data */
@@ -154,54 +85,6 @@ input[type="password"]:focus::placeholder {
 
 * {
   outline: none;
-}
-
-.customcheckbox {
-  display: block;
-  position: relative;
-  left: 10px;
-  bottom: 3px;
-
-  font-weight: 100;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.customcheckbox input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.checkmark {
-  position: absolute;
-  top: 5px;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #cdcdcd;
-  border-radius: 6px;
-}
-
-.customcheckbox input:checked ~ .checkmark {
-  background-color: #21bb47;
-}
-
-.customcheckbox .checkmark:after {
-  left: 8px;
-  top: 4px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
 }
 
 table.dataTable {
@@ -241,19 +124,19 @@ table.dataTable thead .sorting_desc_disabled {
   background-position: center right;
 }
 table.dataTable thead .sorting {
-  background-image: url("{%static '/images/sort_both.png'%}");
+  background-image: url("{%static '/images/sort_both.png%}");
 }
 table.dataTable thead .sorting_asc {
-  background-image: url("{%static '/images/sort_asc.png'%}");
+  background-image: url("{%static '/images/sort_asc.png%}");
 }
 table.dataTable thead .sorting_desc {
-  background-image: url("{%static '/images/sort_desc.png'%}");
+  background-image: url("{%static '/images/sort_desc.png%}");
 }
 table.dataTable thead .sorting_asc_disabled {
-  background-image: url("{%static '/images/sort_asc_disabled.png'%}");
+  background-image: url("{%static '/images/sort_asc_disabled.png%}");
 }
 table.dataTable thead .sorting_desc_disabled {
-  background-image: url("{%static '/images/sort_desc_disabled.png'%}");
+  background-image: url("{%static '/images/sort_desc_disabled.png%})");
 }
 
 table.dataTable tbody tr {
@@ -496,10 +379,13 @@ table.dataTable td {
   *zoom: 1;
   zoom: 1;
   margin-top: 20px;
+  margin-bottom: 20px;
   background-color: white;
   box-shadow: 0 2px 2px 0 #4e7cad5b;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 .dataTables_wrapper .dataTables_length {
   float: left;

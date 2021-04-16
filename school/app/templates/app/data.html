@@ -1,63 +1,11 @@
-{% extends 'app/main.html' %} {%load static%} {% block content %} {%include 'app/navbar.html' %}
+{% extends 'accounts/main.html' %} {%load static%} {% block content %} {%include 'accounts/navbar.html' %}
 
 <!-- Navbar End -->
 <div class="mr-5 ml-5">
   <!-- Form Start -->
   <section id="input-form">
-    <div class="row justify-content-center">
-      <form class="col-sm-5">
-        <div class="form-group">
-          <label for="">No SPK</label>
-          <input type="number" class="form-control" id="" placeholder="No SPK" />
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Zona</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>Barat</option>
-            <option>Utara</option>
-            <option>Timur</option>
-            <option>Selatan</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="">Nama</label>
-          <input type="string" class="form-control" id="" placeholder="Nama" />
-        </div>
-        <div class="form-group">
-          <label for="">Alamat</label>
-          <input type="string" class="form-control" id="" placeholder="Alamat" />
-        </div>
-      </form>
-
-      <form class="col-sm-5">
-        <div class="form-group">
-          <label for="">Tanggal</label>
-          <input type="date" class="form-control" id="" placeholder="" />
-        </div>
-        <div class="form-group">
-          <label for="">Jenis Gangguan</label>
-          <input type="string" class="form-control" id="" placeholder="Jenis Gangguan" />
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Jenis Pipa</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>Persil</option>
-            <option>Trandist</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Status</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>Pending</option>
-            <option>Selesai</option>
-          </select>
-        </div>
-      </form>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-sm-10 ">
-        <button type="button" class="btn btn-primary btn-block mt-3">Input</button>
-      </div>
+    <div class="row justify-content-center align-middle">
+      <a type="button" class="btn btn-primary btn-block mt-3" href="{% url 'create'%}">TAMBAHKAN LAPORAN</a>
     </div>
   </section>
   <!-- Form End -->
@@ -65,8 +13,8 @@
 
 <!-- Table Data Start-->
 
-<div class="container-color mr-5 ml-5">
-  <table class="table table-fluid" id="data-table">
+<div class="mr-5 ml-5 mt-5 sticky-bottom">
+  <table class="table table-fluid dataTables_wrapper" id="data-table">
     <thead class="thead-light">
       <tr>
         <th scope="col" class="th-sm">Status</th>
@@ -78,169 +26,28 @@
         <th scope="col" class="th-sm">Gangguan</th>
         <th scope="col" class="th-sm">Pipa</th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody class="customtable">
+      {% for i in laporan%}
       <tr>
-        <td>Selesai</td>
-        <td>123</td>
-        <td>Barat</td>
-        <td>Bambang</td>
-        <td>Void</td>
-        <td>2021-05-30</td>
-        <td>Bocor</td>
-        <td>Persil</td>
-        <th>
-          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
-        </th>
+        <td>{{i.status}}</td>
+        <td>{{i.spk}}</td>
+        <td>{{i.zona}}</td>
+        <td>{{i.nama}}</td>
+        <td>{{i.alamat}}</td>
+        <td>{{i.tanggal}}</td>
+        <td>{{i.gangguan}}</td>
+        <td>{{i.jenis}}</td>
+
+        <td><a class="btn btn-sm btn-info" href="{% url 'update' i.spk%}">✔</a></td>
+        <td><a class="btn btn-danger btn-sm" href="{% url 'delete' i.spk%}">✖</a></td>
       </tr>
-      <tr>
-        <td>Pending</td>
-        <td>223</td>
-        <td>Selatan</td>
-        <td>Dodi</td>
-        <td>Void</td>
-        <td>2021-05-30</td>
-        <td>Bocor</td>
-        <td>Persil</td>
-        <th>
-          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
-        </th>
-      </tr>
-      <tr>
-        <td>Pending</td>
-        <td>323</td>
-        <td>Utara</td>
-        <td>User</td>
-        <td>Void</td>
-        <td>2021-05-30</td>
-        <td>Bocor</td>
-        <td>Persil</td>
-        <th>
-          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
-        </th>
-      </tr>
-      <tr>
-        <td>Pending</td>
-        <td>423</td>
-        <td>Utara</td>
-        <td>User</td>
-        <td>Void</td>
-        <td>2021-05-30</td>
-        <td>Bocor</td>
-        <td>Persil</td>
-        <th>
-          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
-        </th>
-      </tr>
-      <tr>
-        <td>Pending</td>
-        <td>523</td>
-        <td>Utara</td>
-        <td>User</td>
-        <td>Void</td>
-        <td>2021-05-30</td>
-        <td>Bocor</td>
-        <td>Persil</td>
-        <th>
-          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
-        </th>
-      </tr>
-      <tr>
-        <td>Pending</td>
-        <td>623</td>
-        <td>Utara</td>
-        <td>User</td>
-        <td>Void</td>
-        <td>2021-05-30</td>
-        <td>Bocor</td>
-        <td>Persil</td>
-        <th>
-          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
-        </th>
-      </tr>
-      <tr>
-        <td>Pending</td>
-        <td>723</td>
-        <td>Timur</td>
-        <td>User</td>
-        <td>Void</td>
-        <td>2021-05-30</td>
-        <td>Bocor</td>
-        <td>Persil</td>
-        <th>
-          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
-        </th>
-      </tr>
-      <tr>
-        <td>Selesai</td>
-        <td>823</td>
-        <td>Utara</td>
-        <td>User</td>
-        <td>Void</td>
-        <td>2021-05-30</td>
-        <td>Bocor</td>
-        <td>Persil</td>
-        <th>
-          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
-        </th>
-      </tr>
-      <tr>
-        <td>Pending</td>
-        <td>923</td>
-        <td>Barat</td>
-        <td>User</td>
-        <td>Void</td>
-        <td>2021-05-30</td>
-        <td>Bocor</td>
-        <td>Persil</td>
-        <th>
-          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
-        </th>
-      </tr>
-      <tr>
-        <td>Pending</td>
-        <td>103</td>
-        <td>Utara</td>
-        <td>User</td>
-        <td>Void</td>
-        <td>2021-05-30</td>
-        <td>Bocor</td>
-        <td>Persil</td>
-        <th>
-          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
-        </th>
-      </tr>
-      <tr>
-        <td>Pending</td>
-        <td>113</td>
-        <td>Selatan</td>
-        <td>User</td>
-        <td>Void</td>
-        <td>2021-05-30</td>
-        <td>Bocor</td>
-        <td>Persil</td>
-        <th>
-          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
-        </th>
-      </tr>
-      <tr>
-        <td>Pending</td>
-        <td>123</td>
-        <td>Timur</td>
-        <td>User</td>
-        <td>Void</td>
-        <td>2021-05-30</td>
-        <td>Bocor</td>
-        <td>Persil</td>
-        <th>
-          <button type="button" class="btn btn-outline-danger btn-sm">☓</button>
-        </th>
-      </tr>
+      {% endfor %}
     </tbody>
   </table>
 </div>
+{% endblock %}
 
 <!-- Table Data End -->
-</div>
-{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'accounts/main.html' %} {% load static %} {% block content %} {%include 'accounts/navbar.html' %}
+
+<br />
+<div class="container justify-content-center mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card card-body text-center shadow rounded justify-content-center">
+        <h5>Apa anda yakin akan menghapus "{{item}}" ?</h5>
+
+        <form action="{% url 'delete' item.spk  %}" method="POST" class="justify-content-center">
+          {% csrf_token %}
+          <br />
+          <input class="btn btn-danger" type="submit" value="CONFIRM" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

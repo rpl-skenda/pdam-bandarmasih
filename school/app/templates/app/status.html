@@ -1,41 +1,93 @@
-{% extends 'app/main.html' %} {%load static%} {% block content %} {%include 'app/navbar.html' %}
-
-<div class="mr-5 ml-5">
-  <div class="row">
-    <div class="col">
-      <div class="col-md">
-        <div class="card shadow text-center mt-5" id="total-order">
-          <div class="card-header">
-            <h4 class="card-title text-info">Total Laporan</h4>
+{% extends 'accounts/main.html' %} {%load static%} {% block content %} {%include 'accounts/navbar.html' %}
+<div class="container">
+  <div class="col">
+    <div class="col-md">
+      <div class="card shadow text-center mt-3">
+        <div class="card-header bg-transparent">
+          <h5 class="card-title text-primary">TOTAL LAPORAN</h5>
+        </div>
+        <div class="card-body mb-3 mt-3">
+          <h2 class="card-title text-primary">{{total_laporan}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col">
+        <div class="col-lg">
+          <div class="card shadow text-center">
+            <div class="card-header bg-transparent">
+              <h5 class="card-title text-success">SELESAI</h5>
+            </div>
+            <div class="card-body mb-3 mt-3">
+              <h2 class="card-title text-success">{{selesai}}</h2>
+            </div>
           </div>
-          <div class="card-body mb-4 mt-4">
-            <h2 class="card-title text-black-50">30</h2>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="col-md">
+          <div class="card shadow text-center">
+            <div class="card-header bg-transparent">
+              <h5 class="card-title text-warning">PENDING</h5>
+            </div>
+            <div class="card-body mb-3 mt-3">
+              <h2 class="card-title text-warning">{{pending}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="col-md">
+          <div class="card shadow text-center">
+            <div class="card-header bg-transparent">
+              <h5 class="card-title text-info">PENANGANAN</h5>
+            </div>
+            <div class="card-body mb-3 mt-3">
+              <h2 class="card-title text-info">{{penanganan}}</h2>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col">
-      <div class="col-md">
-        <div class="card shadow text-center mt-5" id="orders-delivered">
-          <div class="card-header">
-            <h4 class="card-title text-success">Selesai</h4>
-          </div>
-          <div class="card-body mb-4 mt-4">
-            <h2 class="card-title text-black-50">30</h2>
+    <div class="row justify-content-center mt-4">
+      <div class="card-group shadow">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title text-secondary">BARAT</h5>
+            <hr />
+            <div class="card-body mr-5 ml-5">
+              <h2 class="card-title text-secondary">{{barat}}</h2>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="col-md">
-        <div class="card shadow text-center mt-5" id="orders-pending">
-          <div class="card-header">
-            <h4 class="card-title text-danger">Pending</h4>
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title text-secondary">UTARA</h5>
+            <hr />
+            <div class="card-body mr-5 ml-5">
+              <h2 class="card-title text-secondary">{{utara}}</h2>
+            </div>
           </div>
-          <div class="card-body mb-4 mt-4">
-            <h2 class="card-title text-black-50">30</h2>
+        </div>
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title text-secondary">TIMUR</h5>
+            <hr />
+            <div class="card-body mr-5 ml-5">
+              <h2 class="card-title text-secondary">{{timur}}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title text-secondary">SELATAN</h5>
+            <hr />
+            <div class="card-body mr-5 ml-5">
+              <h2 class="card-title text-secondary">{{selatan}}</h2>
+            </div>
           </div>
         </div>
       </div>
@@ -43,46 +95,4 @@
   </div>
 </div>
 
-<div class="mb-5 mr-5 ml-5 fixed-bottom" id="zona">
-  <div class="row justify-content-center">
-    <div class="card-group shadow">
-      <div class="card text-center">
-        <div class="card-body">
-          <h4 class="card-title text-primary">Barat</h4>
-          <hr />
-          <div class="card-body mb-2 mt-3 mr-5 ml-5">
-            <h2 class="card-title text-black-50">10</h2>
-          </div>
-        </div>
-      </div>
-      <div class="card text-center">
-        <div class="card-body">
-          <h4 class="card-title text-primary">Utara</h4>
-          <hr />
-          <div class="card-body mb-2 mt-3 mr-5 ml-5">
-            <h2 class="card-title text-black-50">10</h2>
-          </div>
-        </div>
-      </div>
-      <div class="card text-center">
-        <div class="card-body">
-          <h4 class="card-title text-primary">Timur</h4>
-          <hr />
-          <div class="card-body mb-2 mt-3 mr-5 ml-5">
-            <h2 class="card-title text-black-50">10</h2>
-          </div>
-        </div>
-      </div>
-      <div class="card text-center">
-        <div class="card-body">
-          <h4 class="card-title text-primary">Selatan</h4>
-          <hr />
-          <div class="card-body mb-2 mt-3 mr-5 ml-5">
-            <h2 class="card-title text-black-50">10</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 {% endblock %}
