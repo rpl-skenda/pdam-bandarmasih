@@ -6,19 +6,19 @@ from .forms import FormLaporan
 
 # Create your views here.
 def login(request):
-   return render(request, 'accounts/login.html')
+   return render(request, 'app/login.html')
 
 def home(request):
-   return render(request, 'accounts/home.html')
+   return render(request, 'app/home.html')
 
 def data(request):
-   laporan = Laporan2.objects.all()
+   laporan = Laporan.objects.all()
 
    context = {'laporan':laporan}
-   return render(request, 'accounts/data.html', context)
+   return render(request, 'app/data.html', context)
 
 def status(request):
-   laporan = Laporan2.objects.all()
+   laporan = Laporan.objects.all()
 
    total_laporan = laporan.count()
    selesai = laporan.filter(status='Selesai').count()
@@ -31,7 +31,7 @@ def status(request):
    selatan = laporan.filter(zona='Selatan').count()
 
    context = {'laporan':laporan, 'total_laporan':total_laporan, 'selesai':selesai, 'pending':pending, 'penanganan':penanganan, 'barat':barat, 'utara':utara, 'timur':timur, 'selatan':selatan}
-   return render(request, 'accounts/status.html', context)
+   return render(request, 'app/status.html', context)
 
 def create(request):
 	form = FormLaporan()
@@ -43,11 +43,11 @@ def create(request):
 
 
 	context = {'form':form}
-	return render(request, 'accounts/form.html', context)
+	return render(request, 'app/form.html', context)
 
 def update(request, pk):
 
-	laporan = Laporan2.objects.get(spk=pk)
+	laporan = Laporan.objects.get(spk=pk)
 	form = FormLaporan(instance=laporan)
 
 	if request.method == 'POST':
@@ -57,14 +57,14 @@ def update(request, pk):
 			return redirect('/data/')
 
 	context = {'form':form}
-	return render(request, 'accounts/form.html', context)
+	return render(request, 'app/form.html', context)
 
 def delete(request, pk):
-	laporan = Laporan2.objects.get(spk=pk)
+	laporan = Laporan.objects.get(spk=pk)
 
 	if request.method == "POST":
 		laporan.delete()
 		return redirect('/data/')
 
 	context = {'item':laporan}
-	return render(request, 'accounts/delete.html', context)
+	return render(request, 'app/delete.html', context)
