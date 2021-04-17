@@ -41,8 +41,8 @@
         <td>{{i.gangguan}}</td>
         <td>{{i.jenis}}</td>
 
-        <td><a class="btn btn-sm btn-info" href="{% url 'update' i.spk%}">✔</a></td>
-        <td><a class="btn btn-danger btn-sm" href="{% url 'delete' i.spk%}">✖</a></td>
+        <td><a class="btn btn-warning btn-sm" href="{% url 'update' i.spk%}">⚙️</a></td>
+        <td><a class="btn btn-danger btn-sm" href="{% url 'delete' i.spk%}"> ✖ </a></td>
       </tr>
       {% endfor %}
     </tbody>
