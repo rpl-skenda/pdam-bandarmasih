@@ -10,7 +10,9 @@
         <form action="{% url 'delete' item.spk  %}" method="POST" class="justify-content-center">
           {% csrf_token %}
           <br />
-          <input class="btn btn-danger" type="submit" value="CONFIRM" />
+          <input class="btn btn-primary btn-block mt-3" type="submit" value="CONFIRM" />
+          <br />
+          <a href="{% url 'data' %}" class="btn btn-danger btn-block mb-4">CANCEL</a>
         </form>
       </div>
     </div>
