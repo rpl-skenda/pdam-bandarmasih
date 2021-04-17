@@ -63,11 +63,11 @@ body {
 
 /* Form Input */
 #input-form {
-  padding: 3%;
+  padding: 1%;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   background: #fff;
-  box-shadow: 0 2px 2px 0 #4e7cad5b;
+  box-shadow: 2px #4e7cad5b;
 }
 
 a #cancel-button {

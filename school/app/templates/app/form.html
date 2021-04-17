@@ -1,7 +1,7 @@
 {% extends 'app/main.html' %} {%load static%} {% block content %} {%include 'app/navbar.html' %}
 <div class="container">
   <!-- Form Start -->
-  <section id="input-form">
+  <section id="input-form" class="shadow">
     <div class="row justify-content-center">
       <form class="col-sm-8" method="POST" action="">
         {% csrf_token %} {{form.as_p}}

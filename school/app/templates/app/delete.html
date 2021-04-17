@@ -4,10 +4,9 @@
 <div class="container justify-content-center mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <div class="card card-body text-center shadow rounded justify-content-center p-md-5">
+      <div class="card card-body text-center shadow rounded-lg justify-content-center p-md-5">
         <h5>Apa anda yakin akan menghapus</h5>
         <h5 class="text-primary">"{{item}}"</h5>
-
         <form action="{% url 'delete' item.spk  %}" method="POST" class="justify-content-center">
           {% csrf_token %}
           <br />
@@ -16,7 +15,7 @@
               <a href="{% url 'data' %}" class="btn btn-danger btn-block">CANCEL</a>
             </div>
             <div class="col-md-5">
-              <input class="btn btn-info btn-block" type="submit" value="CONFIRM" />
+              <input class="btn btn-primary btn-block" type="submit" value="CONFIRM" />
             </div>
             <br />
           </div>
