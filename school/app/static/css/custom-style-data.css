@@ -63,7 +63,10 @@ body {
 
 /* Form Input */
 #input-form {
-  padding: 1%;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   background: #fff;

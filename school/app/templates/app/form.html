@@ -3,13 +3,28 @@
   <!-- Form Start -->
   <section id="input-form" class="shadow">
     <div class="row justify-content-center">
-      <form class="col-sm-8" method="POST" action="">
-        {% csrf_token %} {{form.as_p}}
+      <form class="col-sm-12" method="POST" action="">
+        {% csrf_token %}
+        <br />
+        <div class="row">
+          <div class="col-md-6">
+            {{form.nama.label}} : {{form.nama}}<br />
+            {{form.alamat.label}} : {{form.alamat}}<br />
+            {{form.tanggal.label}} : {{form.tanggal}}<br />
+            {{form.gangguan.label}} : {{form.gangguan}}<br />
+          </div>
+          <div class="col-md-6">
+            {{form.spk.label}} : {{form.spk}}<br />
+            {{form.zona.label}} : {{form.zona}}<br />
+            {{form.jenis.label}} : {{form.jenis}}<br />
+            {{form.status.label}} : {{form.status}}<br />
+          </div>
+        </div>
         <input type="submit" value="TAMBAHKAN LAPORAN" class="mt-5 mb-3 btn btn-primary btn-block" />
       </form>
     </div>
   </section>
   <!-- Form End -->
 </div>
-<br /><br />
+
 {%endblock%}
