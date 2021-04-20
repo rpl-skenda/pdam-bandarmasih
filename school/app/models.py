@@ -1,6 +1,13 @@
 from django.db import models
 
 # Create your models here.
+class UserInformation(models.Model):
+    nik = models.IntegerField(primary_key=True)
+    nama_pendek = models.CharField(max_length=100, null=True)
+    nama_panjang = models.CharField(max_length=100, null=True)
+    jabatan = models.CharField(max_length=100, null=True)
+    alamat = models.CharField(max_length=200, null=True)
+    nomor_telepon = models.IntegerField()
 
 class Laporan(models.Model):
     ZONA = (
