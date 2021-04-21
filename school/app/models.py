@@ -7,6 +7,7 @@ from django.dispatch import receiver
 class UserInformation(models.Model):
     user = models.OneToOneField(User, null=True , on_delete=models.CASCADE)
     nik = models.IntegerField(primary_key=True)
+    profile_image = models.ImageField(default="user-logo.png", null=True, blank=True)
     nama_pendek = models.CharField(max_length=100, null=True)
     nama_panjang = models.CharField(max_length=100, null=True)
     jabatan = models.CharField(max_length=100, null=True)
