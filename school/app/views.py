@@ -29,19 +29,20 @@ def loginPage(request):
 		else:
 			messages.info(request, 'Username OR password is incorrect')
 
-
 	context = {}
 
 	return render(request, 'app/login.html', context)
 
-@unauthenticated_user
 def logoutUser(request):
 	logout(request)
 	return redirect('login')
 
 @login_required(login_url='login')
 def home(request):
-   return render(request, 'app/home.html')
+	informasi = request.user.UserInformation()
+	
+	context = {'informasi':informasi}
+	return render(request, 'app/home.html', context)
 
 @login_required(login_url='login')
 def data(request):
