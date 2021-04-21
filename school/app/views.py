@@ -39,10 +39,11 @@ def logoutUser(request):
 
 @login_required(login_url='login')
 def home(request):
-	informasi = request.user.UserInformation()
-	
-	context = {'informasi':informasi}
+
+	context = {}
 	return render(request, 'app/home.html', context)
+
+
 
 @login_required(login_url='login')
 def data(request):
