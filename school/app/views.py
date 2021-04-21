@@ -9,31 +9,32 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 from .models import *
 from .forms import FormLaporan
+from .decorators import unauthenticated_user
 
 # Create your views here.
 
+@unauthenticated_user
 def loginPage(request):
-	if request.user.is_authenticated:
-		return redirect('home')
-	else:
-		if request.method == 'POST':
-			username = request.POST.get('username')
-			password = request.POST.get('password')
 
-			user = authenticate(request, username=username, password=password)
-			
-			if user is not None:
-				login(request, user)
-				return redirect('home')
+	if request.method == 'POST':
+		username = request.POST.get('username')
+		password = request.POST.get('password')
 
-			else:
-				messages.info(request, 'Username OR password is incorrect')
+		user = authenticate(request, username=username, password=password)
+		
+		if user is not None:
+			login(request, user)
+			return redirect('home')
+
+		else:
+			messages.info(request, 'Username OR password is incorrect')
 
 
-		context = {}
+	context = {}
 
-		return render(request, 'app/login.html', context)
+	return render(request, 'app/login.html', context)
 
+@unauthenticated_user
 def logoutUser(request):
 	logout(request)
 	return redirect('login')

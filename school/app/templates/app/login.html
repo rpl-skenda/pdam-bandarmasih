@@ -22,8 +22,9 @@
       <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" name="password" />
       <br />
       {% for message in messages %}
-      <p id="messages">{{message}}</p>
+      <p id="messages" class="text-danger">{{message}}</p>
       {% endfor %}
+      <br />
       <input type="submit" name="" id="" value="Login" class="btn btn-block btn-primary" />
     </form>
   </div>
