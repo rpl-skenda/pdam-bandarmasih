@@ -15,5 +15,4 @@ class FormLaporan(ModelForm):
             'gangguan' : forms.TextInput(attrs={'class':'form-control'}),
             'jenis' : forms.Select(attrs={'class':'form-control'}),
             'status' : forms.Select(attrs={'class':'form-control'}),
-
         } 

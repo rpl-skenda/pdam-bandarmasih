@@ -1,4 +1,4 @@
-{% extends 'app/main.html' %} {%load static%} {% block content %} {%include 'app/navbar.html' %}
+{% extends 'app/main.html' %} {%load static%} {% block content %} {%include 'app/navbar.html' %} {% if user.is_authenticated%}
 
 <div class="mt-3 mb-3 container">
   <!-- User Box Start-->
@@ -11,15 +11,14 @@
             <div class="card-title mb-4">
               <div class="d-flex justify-content-start">
                 <div class="image-container">
-                  <img src="{%static '/images/user-logo.png'%}" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                  <img src="{%static '/images/user-logo.png'%}" id="img-profile" style="width: 135px; height: 135px" class="img-thumbnail" />
                 </div>
                 <div class="ml-5 mt-3 profile-head">
-                  <h4>Cahaya</h4>
-                  <h6>Karyawan TRD</h6>
+                  <h4>{{user.userinformation.nama_pendek}}</h4>
+                  <h6>{{user.userinformation.jabatan}}</h6>
                 </div>
               </div>
             </div>
-
             <div class="row">
               <div class="col-12">
                 <ul class="nav nav-tabs mb-4">
@@ -31,7 +30,7 @@
                   <div class="col-sm-3 col-md-2 col-5">
                     <label style="font-weight: bold">NAMA</label>
                   </div>
-                  <div class="col-md-8 col-6">Cahaya Nur Hikari, S.Kom.I</div>
+                  <div class="col-md-8 col-6">{{user.userinformation.nama_panjang}}</div>
                 </div>
                 <hr />
 
@@ -39,7 +38,7 @@
                   <div class="col-sm-3 col-md-2 col-5">
                     <label style="font-weight: bold">NIK</label>
                   </div>
-                  <div class="col-md-8 col-6">117013</div>
+                  <div class="col-md-8 col-6">{{user.userinformation.nik}}</div>
                 </div>
                 <hr />
 
@@ -47,7 +46,7 @@
                   <div class="col-sm-3 col-md-2 col-5">
                     <label style="font-weight: bold">JABATAN</label>
                   </div>
-                  <div class="col-md-8 col-6">Karyawan TRD</div>
+                  <div class="col-md-8 col-6">{{user.userinformation.jabatan}}</div>
                 </div>
                 <hr />
 
@@ -55,7 +54,7 @@
                   <div class="col-sm-3 col-md-2 col-5">
                     <label style="font-weight: bold">ALAMAT</label>
                   </div>
-                  <div class="col-md-8 col-6">Jl. A.Yani No.12, Kebun Bunga, Kec. Banjarmasin Timur, Kota Banjarmasin.</div>
+                  <div class="col-md-8 col-6">{{user.userinformation.alamat}}</div>
                 </div>
                 <hr />
 
@@ -63,7 +62,7 @@
                   <div class="col-sm-3 col-md-2 col-5">
                     <label style="font-weight: bold">NOMOR TELEPON</label>
                   </div>
-                  <div class="col-md-8 col-6">(0511) 3252541</div>
+                  <div class="col-md-8 col-6">{{user.userinformation.nomor_telepon}}</div>
                 </div>
               </div>
             </div>
@@ -75,5 +74,4 @@
 
   <!-- User Box End -->
 </div>
-
-{% endblock %}
+{% endif %} {% endblock %}

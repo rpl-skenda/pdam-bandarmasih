@@ -1,22 +1,58 @@
 from django.shortcuts import render, redirect 
 from django.http import HttpResponse
+
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 from .models import *
 from .forms import FormLaporan
+from .decorators import unauthenticated_user
 
 # Create your views here.
-def login(request):
-   return render(request, 'app/login.html')
 
+@unauthenticated_user
+def loginPage(request):
+
+	if request.method == 'POST':
+		username = request.POST.get('username')
+		password = request.POST.get('password')
+
+		user = authenticate(request, username=username, password=password)
+		
+		if user is not None:
+			login(request, user)
+			return redirect('home')
+
+		else:
+			messages.info(request, 'Username OR password is incorrect')
+
+	context = {}
+
+	return render(request, 'app/login.html', context)
+
+def logoutUser(request):
+	logout(request)
+	return redirect('login')
+
+@login_required(login_url='login')
 def home(request):
-   return render(request, 'app/home.html')
 
+	context = {}
+	return render(request, 'app/home.html', context)
+
+
+
+@login_required(login_url='login')
 def data(request):
    laporan = Laporan.objects.all()
 
    context = {'laporan':laporan}
    return render(request, 'app/data.html', context)
 
+@login_required(login_url='login')
 def status(request):
    laporan = Laporan.objects.all()
 
@@ -33,6 +69,7 @@ def status(request):
    context = {'laporan':laporan, 'total_laporan':total_laporan, 'selesai':selesai, 'pending':pending, 'penanganan':penanganan, 'barat':barat, 'utara':utara, 'timur':timur, 'selatan':selatan}
    return render(request, 'app/status.html', context)
 
+@login_required(login_url='login')
 def create(request):
 	form = FormLaporan()
 	if request.method == 'POST':
@@ -45,6 +82,7 @@ def create(request):
 	context = {'form':form}
 	return render(request, 'app/form.html', context)
 
+@login_required(login_url='login')
 def update(request, pk):
 
 	laporan = Laporan.objects.get(spk=pk)
@@ -59,6 +97,7 @@ def update(request, pk):
 	context = {'form':form}
 	return render(request, 'app/form.html', context)
 
+@login_required(login_url='login')
 def delete(request, pk):
 	laporan = Laporan.objects.get(spk=pk)
 
