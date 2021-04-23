@@ -2,7 +2,6 @@
 
 <div class="mt-3 mb-3 container">
   <!-- User Box Start-->
-
   <section id="user-box">
     <div class="row mt-2">
       <div class="col-12">
@@ -11,7 +10,7 @@
             <div class="card-title mb-4">
               <div class="d-flex justify-content-start">
                 <div class="image-container">
-                  <img src="{%static '/images/user-logo.png'%}" id="img-profile" style="width: 135px; height: 135px" class="img-thumbnail" />
+                  <img src="{{request.user.userinformation.profile_image.url}}" id="img-profile" style="width: 135px; height: 135px" class="img-thumbnail" />
                 </div>
                 <div class="ml-5 mt-3 profile-head">
                   <h4>{{user.userinformation.nama_pendek}}</h4>
