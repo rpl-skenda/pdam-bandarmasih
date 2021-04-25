@@ -20,12 +20,13 @@
       <input type="text" id="text" class="form-control" placeholder="Username" required="" autofocus="" name="username" />
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" name="password" />
-      <br />
+
       {% for message in messages %}
-      <p id="messages" class="text-danger">{{message}}</p>
+      
+      <p id="messages" class="text-danger mt-3">{{message}}</p>
       {% endfor %}
-      <br />
-      <input type="submit" name="" id="" value="Login" class="btn btn-block btn-primary" />
+
+      <input type="submit" name="" id="" value="Login" class="btn btn-block btn-primary mt-4 mb-3" />
     </form>
   </div>
 </div>
