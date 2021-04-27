@@ -8,9 +8,12 @@ urlpatterns = [
 
    path('', views.home, name='home'),
    path('data/', views.data, name='data'),
-   path('status/', views.status, name='status'),
+   path('dataTukang/', views.dataTukang, name='dataTukang'),
 
+   path('status/', views.status, name='status'),
    path('create/', views.create, name='create'),
+
    path('update/<str:pk>/', views.update, name="update"),
    path('delete/<str:pk>/', views.delete, name="delete"),
+   path('updatestatus/<str:pk>/', views.update_status, name="updateStatus"),
 ]

@@ -1,0 +1,23 @@
+{% extends 'app/main.html' %} {% load static %} {% block content %} {%include 'app/navbar.html' %}
+
+<br /><br /><br /><br />
+<div class="container justify-content-center mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card card-body text-center shadow rounded-lg justify-content-center p-md-5">
+        <h5>Apa anda telah menangani gangguan</h5>
+        <h5 class="text-primary">"{{item}}"</h5>
+        <form class="col-sm-12" method="POST" action="">
+          {% csrf_token %}
+          <br />
+          <div class="row">
+            {{form.status}}
+            <br />
+            <input type="submit" value="TAMBAHKAN LAPORAN" class="mt-4 mb-1 btn btn-primary btn-block" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

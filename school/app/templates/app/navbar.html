@@ -15,8 +15,13 @@
             <a class="nav-link text-primary" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link text-primary" href="{% url 'dataTukang' %}">Daftar Pekerjaan</a>
+          </li>
+          {% if request.user.is_karyawan %}
+          <li class="nav-item">
             <a class="nav-link text-primary" href="{% url 'data' %}">Laporan</a>
           </li>
+          {% endif %}
           <li class="nav-item">
             <a class="nav-link text-primary" href="{% url 'status' %}">Status</a>
           </li>
