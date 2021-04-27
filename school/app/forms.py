@@ -16,3 +16,11 @@ class FormLaporan(ModelForm):
             'jenis' : forms.Select(attrs={'class':'form-control'}),
             'status' : forms.Select(attrs={'class':'form-control'}),
         } 
+
+class FormLaporanTukang(ModelForm):
+    class Meta:
+        model = Laporan
+        fields = ['status']
+        widgets = {
+            'status' : forms.Select(attrs={'class':'form-control'}),
+        } 

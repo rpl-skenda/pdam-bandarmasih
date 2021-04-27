@@ -1,15 +1,19 @@
 from django.shortcuts import render, redirect 
 from django.http import HttpResponse
-
+from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
+
 from django.contrib.auth import authenticate, login, logout
+
 from django.contrib import messages
+
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Group
 
 # Create your views here.
 from .models import *
-from .forms import FormLaporan
-from .decorators import unauthenticated_user
+from .forms import FormLaporan, FormLaporanTukang
+from .decorators import unauthenticated_user, allowed_users
 
 # Create your views here.
 
@@ -44,7 +48,6 @@ def home(request):
 	return render(request, 'app/home.html', context)
 
 
-
 @login_required(login_url='login')
 def data(request):
    laporan = Laporan.objects.all()
@@ -70,6 +73,7 @@ def status(request):
    return render(request, 'app/status.html', context)
 
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['karyawan'])
 def create(request):
 	form = FormLaporan()
 	if request.method == 'POST':
@@ -83,6 +87,15 @@ def create(request):
 	return render(request, 'app/form.html', context)
 
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['tukang'])
+def dataTukang(request):
+   laporan = Laporan.objects.all()
+
+   context = {'laporan':laporan}
+   return render(request, 'app/data_tukang.html', context)
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['karyawan'])
 def update(request, pk):
 
 	laporan = Laporan.objects.get(spk=pk)
@@ -98,6 +111,7 @@ def update(request, pk):
 	return render(request, 'app/form.html', context)
 
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['karyawan'])
 def delete(request, pk):
 	laporan = Laporan.objects.get(spk=pk)
 
@@ -107,3 +121,19 @@ def delete(request, pk):
 
 	context = {'item':laporan}
 	return render(request, 'app/delete.html', context)
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['tukang'])
+def update_status(request, pk):
+
+	laporan = Laporan.objects.get(spk=pk)
+	form = FormLaporanTukang(instance=laporan)
+
+	if request.method == 'POST':
+		form = FormLaporanTukang(request.POST, instance=laporan)
+		if form.is_valid():
+			form.save()
+			return redirect('/dataTukang/')
+
+	context = {'form':form, 'item':laporan}
+	return render(request, 'app/update_status.html', context)
