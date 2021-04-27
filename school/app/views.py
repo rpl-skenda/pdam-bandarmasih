@@ -31,7 +31,7 @@ def loginPage(request):
 			return redirect('home')
 
 		else:
-			messages.info(request, 'Username OR password is incorrect')
+			messages.info(request, 'Username or Password is incorrect')
 
 	context = {}
 
@@ -49,6 +49,7 @@ def home(request):
 
 
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['karyawan'])
 def data(request):
    laporan = Laporan.objects.all()
 

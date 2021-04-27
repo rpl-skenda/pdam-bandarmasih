@@ -1,7 +1,6 @@
 {% extends 'app/main.html' %} {%load static%} {% block content %} {%include 'app/navbar.html' %}
 
 <!-- Navbar End -->
-{% if request.user.is_karyawan %}
 <div class="mr-5 ml-5">
   <!-- Form Start -->
   <section id="input-form">
@@ -11,7 +10,6 @@
   </section>
   <!-- Form End -->
 </div>
-{% endif %}
 
 <!-- Table Data Start-->
 
